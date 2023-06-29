@@ -76,6 +76,3 @@ jobs:
           prerelease: false
           files: |
             vyos-${{ env.BUILD_VERSION }}-${{ env.BUILD_ARCH }}.iso
-
-- name: Set output
-run: echo "{name}={value}" >> $GITHUB_OUTPUT
