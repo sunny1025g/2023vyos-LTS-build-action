@@ -21,7 +21,6 @@ env:
   PACKER_JSON_PATCH_FILE: packer.json_wait-time_equuleus.patch
   ARTIFACTS_DIR: artifacts
   WORKING_DIR: vyos-build
-  STATUS_SUCCESS: "::set-output name=status::success"
 
 jobs:
   build:
@@ -78,3 +77,5 @@ jobs:
           files: |
             vyos-${{ env.BUILD_VERSION }}-${{ env.BUILD_ARCH }}.iso
 
+- name: Set output
+run: echo "{name}={value}" >> $GITHUB_OUTPUT
